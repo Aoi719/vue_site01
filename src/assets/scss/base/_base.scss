@@ -1,0 +1,46 @@
+@use '../settings/variables' as *;
+@use '../settings/functions' as *;
+@use '../settings/mixins' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $ff-noto-sans-jp;
+  color: $black;
+  font-size: fz(16);
+  line-height: 1.7;
+  @include mq() {
+    font-size: fz(14);
+  }
+}
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: $leading-trim;
+}
+input,
+button,
+textarea,
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  &:focus {
+    outline-offset: 4px;
+  }
+}
+ul,
+ol {
+  list-style-type: none;
+}

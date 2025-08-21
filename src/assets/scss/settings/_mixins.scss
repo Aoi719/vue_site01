@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'sm': 576,
+  'md': 768,
+  'lg': 992,
+  'xl': 1200,
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media screen and (max-width: #{map.get($breakpoints, $breakpoint) + px}) {
+    @content;
+  }
+}
+
+@mixin mqup($breakpoint: md) {
+  $value: map.get($breakpoints, $breakpoint);
+  @media screen and (min-width: #{ $value + 1px }) {
+    @content;
+  }
+}
